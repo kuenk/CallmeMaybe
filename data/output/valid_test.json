@@ -1,0 +1,29 @@
+{
+    "functions": [
+        {
+            "name": "fn_add_numbers",
+            "description": "Adds two numbers together and return their sum.",
+            "parameters": {
+                "a": {
+                    "type": "number"
+                },
+                "b": {
+                    "type": "number"
+                }
+            },
+            "returns": null
+        },
+        {
+            "name": "fn_greet",
+            "description": "Generate a greeting message for a given name.",
+            "parameters": {
+                "name": {
+                    "type": "string"
+                }
+            },
+            "returns": {
+                "type": "string"
+            }
+        }
+    ]
+}

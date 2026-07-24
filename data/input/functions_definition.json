@@ -1,17 +1,26 @@
 [
     {
-        "prompt": "What is the sum of 2 and 3?"
+       "name": "fn_add_numbers",
+       "description": "Adds two numbers together and return their sum.",
+       "parameters": {
+            "a": {
+                "type": "number"
+            },
+            "b": {
+                "type": "number"
+            }
+       }
     },
     {
-        "prompt": "What is the sum of 265 and 345?"
-    },
-    {
-        "prompt": "Greet shrek"
-    },
-    {
-        "prompt": "Greet john"
-    },
-    {
-        "prompt": "Reverse the string 'hello'"
+        "name": "fn_greet",
+        "description": "Generate a greeting message for a given name.",
+        "parameters": {
+            "name": {
+                "type": "string"
+            }
+        },
+        "returns": {
+            "type": "string"
+        }
     }
 ]

@@ -1,4 +1,4 @@
-from typing import Literal, Any
+from typing import Literal, Any, Optional
 from pydantic import BaseModel
 
 class FunctionParameter(BaseModel):
@@ -8,7 +8,7 @@ class FunctionDefinition(BaseModel):
     name: str
     description: str
     parameters: dict[str, FunctionParameter]
-    returns: Any
+    returns: FunctionParameter | None = None
 
 class TestPrompt(BaseModel):
     prompt: str
