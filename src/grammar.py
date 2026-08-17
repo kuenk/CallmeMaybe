@@ -9,7 +9,8 @@ def enum_continue(generate: str, candidate: str, options: list[str]) -> bool:
     return False
 
 
-def enum_complete(generate: str, options: list[str], _preferred_candidate: str) -> bool:
+def enum_complete(generate: str, options: list[str],
+                  _preferred_candidate: str) -> bool:
     return generate in options
 
 

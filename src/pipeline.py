@@ -23,7 +23,7 @@ def build_prompt(functions: list[FunctionDefinition], user_prompt: str) -> str:
     return prompt2
 
 
-def make_enum_grammar(options: list[str]) -> tuple[Callable[[str, str], bool], 
+def make_enum_grammar(options: list[str]) -> tuple[Callable[[str, str], bool],
                                                    Callable[[str, str], bool]]:
     def is_valid_fn(generate: str, candidate: str) -> Any:
         return enum_continue(generate, candidate, options)
@@ -49,7 +49,7 @@ def process_prompt(llm: Any, vocab: Vocabulary,
             break
     if choosen is None:
         raise GenerationError(f"Chosen function name {chosen_name} "
-                         f"not found in functions list")
+                              f"not found in functions list")
     text = prompt_text + '{"name": "' + chosen_name + '", "parameters": {'
     parameters_dict = {}
     for index, (param_name, param_spec) in enumerate(
@@ -69,8 +69,8 @@ def process_prompt(llm: Any, vocab: Vocabulary,
                                          string_continue, string_complete)
             if not value.endswith('"'):
                 raise GenerationError(f"String generation for '{param_name}' "
-                                   f"did not terminate properly "
-                                   f"(hit max_tokens): {value!r}")
+                                      f"did not terminate properly "
+                                      f"(hit max_tokens): {value!r}")
             parameters_dict[param_name] = value[:-1]
         elif param_spec.type == "boolean":
             bool_valid, bool_complete = make_enum_grammar(["true", "false"])

@@ -25,7 +25,8 @@ if __name__ == "__main__":
     )
     args = parser.parse_args()
     try:
-        functions = load_and_validate(Path(args.functions_definition), FunctionDefinition)
+        functions = load_and_validate(Path(args.functions_definition),
+                                      FunctionDefinition)
     except ValidationError as e:
         print(f"Validation error: {e}")
         sys.exit(1)

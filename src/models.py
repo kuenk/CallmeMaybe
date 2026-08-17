@@ -24,5 +24,5 @@ class FunctionCallResult(BaseModel):
 
 
 class GenerationError(Exception):
-    """Raised when the constrained generation process cannot produce a usable"""
-    """ value (invalid grammar state, generation cut short, etc.)"""
+    """Raised when the constrained generation process cannot produce a """
+    """usable value (invalid grammar state, generation cut short, etc.)"""
